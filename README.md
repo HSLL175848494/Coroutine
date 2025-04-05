@@ -12,6 +12,7 @@ A C++20 header-only library providing generator coroutines with configurable sus
 ### Value Generator
 ```cpp
 using namespace HSLL;
+
 Generator<START_FLAG_SUSPENDED, int> generate_numbers(int max) {
     for (int i = 0; i < max; ++i) {
         co_yield i;
@@ -30,6 +31,8 @@ int main() {
 ### Void Generator (No Return Value)
 
 ```cpp
+using namespace HSLL;
+
 Generator<START_FLAG_NOSUSPEND> task() {
     std::cout << "Task started\n";
     co_await std::suspend_always{};
