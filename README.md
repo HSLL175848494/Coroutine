@@ -9,11 +9,10 @@ A C++20 header-only library providing generator coroutines with configurable sus
 
 ## Usage
 
-### value Generator
+### Value Generator
 ```cpp
-#include "coroutine.hpp"
-
-HSLL::Generator<HSLL::START_FLAG_SUSPENDED, int> generate_numbers(int max) {
+using namespace HSLL;
+Generator<START_FLAG_SUSPENDED, int> generate_numbers(int max) {
     for (int i = 0; i < max; ++i) {
         co_yield i;
     }
@@ -31,7 +30,7 @@ int main() {
 ### Void Generator (No Return Value)
 
 ```cpp
-HSLL::Generator<HSLL::START_FLAG_NOSUSPEND> task() {
+Generator<START_FLAG_NOSUSPEND> task() {
     std::cout << "Task started\n";
     co_await std::suspend_always{};
     std::cout << "Task resumed\n";
@@ -72,5 +71,3 @@ int main() {
 3. Complete API documentation
 4. Best practices
 5. Requirements and license information
-
-You may want to customize the license section based on your actual licensing choice. The examples demonstrate both the value-generating and void generator use cases, showing the flexibility of your implementation.
