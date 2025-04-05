@@ -1,5 +1,3 @@
-Here's a README.md file for your coroutine generator library:
-
 ```markdown
 # HSLL Coroutine Generator Library
 
