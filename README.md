@@ -5,14 +5,6 @@ Here's a README.md file for your coroutine generator library:
 
 A C++20 header-only library providing generator coroutines with configurable suspension behavior.
 
-## Features
-
-- **Configurable Start Behavior**: Choose between immediate execution or suspended start
-- **Type-Safe Generators**: Generate values of any type with proper type safety
-- **Exception Safe**: Proper handling of exceptions and resource cleanup
-- **Header-Only**: Easy integration into any C++20 project
-- **Move-Only Semantics**: Ensures proper ownership of coroutine state
-
 ## Requirements
 
 - C++20 compiler with coroutine support
@@ -81,15 +73,6 @@ int main() {
 2. Prefer `next()` for value-generating coroutines
 3. Use `Destroy()` explicitly if you need to clean up before the generator goes out of scope
 4. The generator is move-only - use `std::move` when transferring ownership
-
-## License
-
-[MIT License](LICENSE)
-```
-
-This README provides:
-1. A clear description of the library
-2. Usage examples for both value-generating and void coroutines
 3. Complete API documentation
 4. Best practices
 5. Requirements and license information
